@@ -1,0 +1,104 @@
+﻿@using HtmlAgilityPack;
+@using System.Web;
+@model IEnumerable<MoviesInfoApp.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<body onload="LoadMovies()">
+
+<h1>Movie List</h1>
+
+<p>
+        <button class="btn-succes">Create New</button>
+</p>
+
+<div id="SearchbarContent">
+        <ejs-textbox class="e-input" id="searchbar" placeholder="Search" floatLabelType="Always" asp-for="@ViewBag.SearchData" oninput="Search(this.value)">
+
+        </ejs-textbox>
+    </div>
+
+
+@{
+   
+}
+
+    <script>
+
+        function LoadMovies() 
+        {
+            var movies = "";
+            var model = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model) as String);
+
+
+            for (let i = 0; i < model.length; i++) {
+                movies += "<tr id='MoviesRow' style='float:right; padding-top: 20px; margin-top:20px; width: fit-content;'><td><a asp-action='Details' href='/List/Details/" + model[i].MovieId + "' asp-route-id=" + model[i].MovieId + "><img src='" + model[i].Poster_Link + "' alt='Movie Poster' width='150' id='poster' /><p id='Title'>" + model[i].Title + "</p></a></td></tr>";
+            }
+
+            document.getElementById("result").innerHTML = movies;
+        }
+
+
+        function Search(data)
+        {
+            var a = data.toUpperCase().replace(/\s/g, '');
+
+            var model = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model) as String);
+
+
+        var movies = "";
+
+        if (a == null) {
+
+            for (let i = 0; i < model.length; i++) {
+                movies += "<tr id='MoviesRow' style='float:right; padding-top: 20px; margin-top:20px; width: fit-content;'><td><a asp-action='Details' href='/List/Details/" + model[i].MovieId + "' asp-route-id=" + model[i].MovieId + "><img src='" + model[i].Poster_Link + "' alt='Movie Poster' width='150' id='poster' /><p id='Title'>" + model[i].Title + "</p></a></td></tr>";
+            }
+        }
+        else
+        {
+            for (let i = 0; i < model.length; i++) {
+
+                if (model[i].Title.toUpperCase().replace(/\s/g, '').includes(a)) {
+
+                    movies += "<tr id='MoviesRow' style='float:right; padding-top: 20px; margin-top:20px; width: fit-content;'><td><a asp-action='Details' href='/List/Details/" + model[i].MovieId + "' asp-route-id=" + model[i].MovieId + "><img src='" + model[i].Poster_Link + "' alt='Movie Poster' width='150' id='poster' /><p id='Title'>" + model[i].Title + "</p></a></td></tr>";
+                }
+            }
+        }
+
+        document.getElementById("result").innerHTML = movies;
+    }
+    </script>
+
+<div id="container">
+    <table class="table">
+        <tbody id="result">
+
+        </tbody>
+    </table>
+</div>
+
+ </body>
+  
+@* @foreach (var item in Model)
+{
+
+    if (item.Title.Contains(ViewBag.SearchData))
+    {
+            <tr id="MoviesRow" style="float:right; padding-top: 20px; margin-top:20px; width: fit-content;" >
+                <td>
+                        <div>@str</div>
+
+                    @{
+                        string poster = item.Poster_Link;
+                    }
+                    <a asp-action="Details" asp-route-id="@item.MovieId">
+                         <img src=@poster alt="Movie Poster" width="150" id="poster"/>
+                        <p id="Title">@item.Title</p>
+                    </a>
+            </td>
+        </tr>
+    }
+} *@
+

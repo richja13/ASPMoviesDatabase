@@ -1,0 +1,115 @@
+﻿@model MoviesInfoApp.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div id="DetailsContainer">
+    @{
+        string poster = Model.Poster_Link;
+    }
+
+    <div class="row">
+
+    <div class="image-container" style="float:left; margin-right: 20px; padding-left: 25px; width: 100%;">
+        <h1 style="-webkit-text-stroke: 1.4px black; text-shadow: 2px 3px 4px black;"> <b>@Html.DisplayFor(model => model.Title)</b></h1>
+
+        <img src=@poster alt="Movie Poster" width="250" id="movieposter"/>
+
+        <div id="description" style="margin-left: 30px; font-size: 22px;">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+
+        <div style="float:left;">
+            <span>
+                <b>@Html.DisplayNameFor(model => model.Year)</b>
+                <br>
+                @Html.DisplayFor(model => model.Year)
+            </span>
+                <br>
+                <span style="float:left">
+                    <b>@Html.DisplayNameFor(model => model.Runtime)</b>
+                    <br>
+                    @Html.DisplayFor(model => model.Runtime)
+                </span>
+            </div>
+            <div class="dot">
+                <p>
+                    <b>@Html.DisplayFor(model => model.Meta_score)</b>
+                </p>
+                <span style="text-align: center; float:right; font-size:21px; align-content:center; margin-top: 10px;"><b>Meta Score</b></span>
+            </div>
+    </div>
+    
+
+
+    <br>
+   
+
+     <div style="float: right;">
+    <dl class="row" style="margin: 35px; display: grid; grid-template-rows: auto auto; grid-auto-columns: 1fr; grid-auto-flow:column; float: left;">
+      
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+     
+        </dl>
+
+
+    <dl style="margin: 35px; display: grid; grid-template-rows: auto auto; grid-auto-columns: 1fr; grid-auto-flow:column; float: left;">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Star1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Star1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Star2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Star2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Star3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Star3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Star4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Star4)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gross)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gross)
+        </dd>
+    </dl>
+</div>
+<br>
+        <div style="float: right; align-content:center;">
+            @* <a asp-action="Edit" asp-route-id="@Model?.MovieId">Edit</a>  *@
+            <button class="button-30" onclick="javascript:history.go(-1)">Return</button>
+        </div>
+</div>
+
+
+</div>

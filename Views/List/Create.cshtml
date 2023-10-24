@@ -1,0 +1,98 @@
+﻿@model MoviesInfoApp.Models.Movie
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Poster_Link" class="control-label"></label>
+                <input asp-for="Poster_Link" class="form-control" />
+                <span asp-validation-for="Poster_Link" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Runtime" class="control-label"></label>
+                <input asp-for="Runtime" class="form-control" />
+                <span asp-validation-for="Runtime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meta_score" class="control-label"></label>
+                <input asp-for="Meta_score" class="form-control" />
+                <span asp-validation-for="Meta_score" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Director" class="control-label"></label>
+                <input asp-for="Director" class="form-control" />
+                <span asp-validation-for="Director" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Star1" class="control-label"></label>
+                <input asp-for="Star1" class="form-control" />
+                <span asp-validation-for="Star1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Star2" class="control-label"></label>
+                <input asp-for="Star2" class="form-control" />
+                <span asp-validation-for="Star2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Star3" class="control-label"></label>
+                <input asp-for="Star3" class="form-control" />
+                <span asp-validation-for="Star3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Star4" class="control-label"></label>
+                <input asp-for="Star4" class="form-control" />
+                <span asp-validation-for="Star4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gross" class="control-label"></label>
+                <input asp-for="Gross" class="form-control" />
+                <span asp-validation-for="Gross" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

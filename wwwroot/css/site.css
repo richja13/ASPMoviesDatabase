@@ -1,0 +1,195 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    color: #F39F5A;
+    background-color: #662549;
+    background-image: linear-gradient(45deg,#F39F5A,#662549, #451952);
+    background-attachment: fixed;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+#container {
+
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#MoviesRow {
+
+    height: 310px;
+}
+
+#poster {
+    width: 150px;
+    border: solid 2px black;
+    border-radius: 5%;
+    transition: all 0.2s;
+}
+
+    #poster:hover {
+        transform: translate(0, -10%);
+        width: 180px;
+        border-radius: 0%;
+        border: solid 4px #F39F5A;
+    }
+
+        #poster:hover + #Title {
+            transform: translate(0, -10%);
+            width: 170px;
+            color: #F39F5A;
+            font-style: oblique;
+        }
+
+#Title {
+
+    color: transparent;
+    text-align: center;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    width: 140px;
+    transform: translate(0, -150%);
+ 
+    transition: all 0.2s;
+}
+
+td
+{
+    border: none;
+}
+
+.dot {
+    float: right;
+    border: solid 5px #AE445A;
+    border-radius: 50%;
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    margin-right: 80px;
+    margin-top: 80px;
+}
+
+.dot > p
+{
+    font-size: 65px;
+    text-align: center;
+    align-content: center;
+    transform: translateY(6%)
+}
+
+div
+{
+    margin: 15px;
+}
+
+.e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text {
+    text-align: center;
+    font-size: 25px;
+    transition: all 0.2s;
+}
+
+    .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text:hover {
+        text-align: center;
+        transform: translate(0, -10%);
+        font-size: 45px;
+    }
+
+ 
+.e-float-input.e-control-wrapper input:valid
+ {
+    font-size: 24px;
+    height: 25px;
+}
+
+.e-float-input input:valid:focus:not(.e-success):not(.e-warning):not(.e-error) {
+    color: #F39F5A;
+}
+
+#DetailsContainer {
+    padding: 25px;
+    width: 70%;
+    border-radius:10%;
+    background: rgba(69, 25, 82, 0.5);
+    margin: 0 auto;
+    width: 80%;
+    height: 90%;
+}
+
+#description
+{
+    margin-left: 20px;
+}
+
+
+
+#movieposter {
+
+    border: solid 10px transparent;
+    border-radius: 4%;
+    float: left;
+    margin-left: 20px;
+}
+
+
+
+
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #662549;
+    border-radius: 4px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #F39F5A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}
+
+    .button-30:focus {
+        box-shadow: #451952 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+
+    .button-30:hover {
+        box-shadow: #451952, #D6D6E7 0 -3px 0 inset;
+        transform: translateY(-2px);
+    }
+
+    .button-30:active {
+        box-shadow: #451952 0 3px 7px inset;
+        transform: translateY(2px);
+    }
