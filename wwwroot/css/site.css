@@ -11,16 +11,17 @@ html {
 html {
     position: relative;
     min-height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     margin-bottom: 60px;
     color: #F39F5A;
-    background-color: #662549;
     background-image: linear-gradient(45deg,#F39F5A,#662549, #451952);
     background-attachment: fixed;
     stroke: black;
     stroke-width: 2px;
+    font-family: 'Poppins', sans-serif;
 }
 
 #container {
@@ -37,10 +38,29 @@ a
     height: 310px;
 }
 
+#editbutton {
+    width: 100px;
+    background-color: #F39F5A;
+    box-shadow: 4px 4px 2px black;
+    text-align:center;
+    transition: all ease-in .2s;
+}
+
+    #editbutton > a {
+        color: black;
+        margin: 0 auto;
+    }
+
+    #editbutton:hover {
+        transform: translateY(-10%);
+        box-shadow: 6px 6px 3px black;
+    }
+
 #poster {
     width: 150px;
     border: solid 2px black;
     border-radius: 5%;
+    box-shadow: 8px 8px 2px rgba(0,0,0,0.6);
     transition: all 0.2s;
 }
 
@@ -48,6 +68,7 @@ a
         transform: translate(0, -10%);
         width: 180px;
         border-radius: 0%;
+        box-shadow: 14px 20px 4px rgba(0,0,0,0.6);
         border: solid 4px #F39F5A;
     }
 
@@ -66,7 +87,7 @@ a
     text-overflow: ellipsis;
     width: 140px;
     transform: translate(0, -150%);
- 
+    pointer-events: none;
     transition: all 0.2s;
 }
 
@@ -94,10 +115,67 @@ td
     transform: translateY(6%)
 }
 
+.table
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+tbody {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 div
 {
     margin: 15px;
 }
+
+#SearchbarContent
+{
+    margin: 0 auto;
+    width: 80%;
+    transition: all ease-in-out .2s;
+}
+
+    #SearchbarContent:has(#searchbar:focus) {
+        width: 100%;
+    }
+
+#searchbar {
+
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    background-color: transparent;
+    transition: all ease-in 0.1s;
+}
+
+
+
+    #searchbar:focus {
+        border: none;
+        border-bottom-width: 3px;
+        border-bottom: solid #F39F5A;
+        outline: none;
+        font-size: 15px;
+        color: #F39F5A;
+        font-style: oblique;
+    }
+
+      
+
+    #searchbar::placeholder {
+        color: #F39F5A;
+        font-size: 20px;
+    }
+
 
 .e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text {
     text-align: center;

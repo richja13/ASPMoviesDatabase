@@ -10,20 +10,12 @@
 
 <h1>Movie List</h1>
 
-<p>
-        <button class="btn-succes">Create New</button>
-</p>
-
+<div>
+    <div id="editbutton"><a asp-action="Create">Create New</a></div>
+</div>
 <div id="SearchbarContent">
-        <ejs-textbox class="e-input" id="searchbar" placeholder="Search" floatLabelType="Always" asp-for="@ViewBag.SearchData" oninput="Search(this.value)">
-
-        </ejs-textbox>
+        <input id="searchbar" placeholder="Search movie🔎" oninput="Search(this.value)" />
     </div>
-
-
-@{
-   
-}
 
     <script>
 
